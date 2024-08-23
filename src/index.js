@@ -104,8 +104,17 @@ fontLoader.load(
 /*
 * Camera
 */ 
+
 const camera = new THREE.PerspectiveCamera(45, sizes.width/sizes.height, 0.1, 200)
-camera.position.set(0, 0, 5)
+camera.position.set(0, 0, 6)
+
+/*
+* For animated camera un-comment code below and add rotation each tick to the cameraOffsetGrp.
+*/
+// const cameraOffsetGrp = new THREE.Group()
+// camera.lookAt(cameraOffsetGrp.position)
+// cameraOffsetGrp.add(camera)
+// scene.add(cameraOffsetGrp)
 
 /*
 * Renderer
@@ -117,7 +126,6 @@ const controller = new OrbitControls(camera, canvasEl)
 controller.enableDamping = true
 
 const tick = () => {
-    controller.update()
     renderer.render(scene, camera)
     window.requestAnimationFrame(tick)
 }
