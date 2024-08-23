@@ -11,7 +11,7 @@ const canvasEl = document.getElementById("canvas")
 */
 const sizes = {
     width: window.innerWidth,
-    height: innerHeight
+    height: window.innerHeight
 }
 
 window.addEventListener("resize", () => {
